@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Todo } from './todo';
 
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -33,4 +34,8 @@ export class AppComponent {
     this.name = item;
     this.editableIndex = index;
   }
+
+  constructor() {};
+
+  ngOnInit(): void {};
 }
