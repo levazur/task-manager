@@ -120,5 +120,8 @@
       }
     }
   },
-  "defaultProject": "task-manager"
+  "defaultProject": "task-manager",
+  "cli": {
+    "analytics": "3bf6ef31-586a-41da-8984-5b2fdffdd321"
+  }
 }
