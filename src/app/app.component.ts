@@ -10,16 +10,16 @@ import { Todo } from './todo';
 })
 
 export class AppComponent {
-  todos: Todo = [];
-  name = '';
-  editable = false;
+  todos = []; 
+  name = 'TodoApp';
+  editable = false; 
   addButton = 'ADD';
   editableIndex = '';
 
   Add() {
-    const TodosList: Todo = {
+    const TodosList = {
       name: this.name,
-      editable: this.editable,
+      editable: this.editable
     }
     this.todos.splice(0,0,TodosList);
     this.name = ''
@@ -39,3 +39,4 @@ export class AppComponent {
 
   ngOnInit(): void {};
 }
+
