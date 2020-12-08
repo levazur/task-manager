@@ -1,42 +1,40 @@
-import { Component } from '@angular/core';
-import { Todo } from './todo';
-
-
+import { Component, OnInit } from "@angular/core";
+import { Todo } from "./todo";
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: "my-app",
+  templateUrl: "./app.component.html",
+  styleUrls: ["./app.component.css"]
 })
+export class AppComponent implements OnInit {
+  constructor() {}
 
-export class AppComponent {
-  todos = []; 
-  name = 'TodoApp';
+  ngOnInit(): void {}
+  todos = [];
+  name = "TodoApp"; 
   editable = false; 
-  addButton = 'ADD';
-  editableIndex = '';
-
-  Add() {
-    const TodosList = {
+  addButton = "დამატება";
+  editableIndex = "";
+  
+  Add() { 
+    const TodosList = { 
       name: this.name,
       editable: this.editable
-    }
-    this.todos.splice(0,0,TodosList);
-    this.name = ''
+    };
+    this.todos.splice(0, 0, TodosList);
+    this.name = "";
+  }
+  handleClear(){
+    this.name = ' ';
   }
   Delete(index) {
     this.todos.splice(index, 1);
-    this.name = '';
+    this.name = "";
   }
   Edit(item, index) {
     this.editable = true;
-    this.addButton = 'UPDATE';
+    this.addButton = "UPDATE";
     this.name = item;
     this.editableIndex = index;
   }
-
-  constructor() {};
-
-  ngOnInit(): void {};
 }
-
