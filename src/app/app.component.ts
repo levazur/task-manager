@@ -10,22 +10,20 @@ export class AppComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
   todos = [];
-  name = "TodoApp"; 
-  editable = false; 
-  addButton = "დამატება";
+  name = "";
+  editable = true;
+  addButton: {} = "ADD";
   editableIndex = "";
-  
-  Add() { 
-    const TodosList = { 
+
+  Add() {
+    const TodosList = {
       name: this.name,
       editable: this.editable
     };
     this.todos.splice(0, 0, TodosList);
     this.name = "";
-  }
-  handleClear(){
-    this.name = ' ';
   }
   Delete(index) {
     this.todos.splice(index, 1);

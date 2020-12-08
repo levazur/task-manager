@@ -1,15 +1,23 @@
 <div class="header">
-	<h2>განრიგი</h2>
-	<input class="inputClass" type="text" placeholder="პროექტის დასახელება"><br>
-	<button (click)='Add(), handleClear()' class="addButton">{{addButton}}</button>
+  <h2>განრიგი</h2>
+  <input class="inputClass" type="text" placeholder="პროექტის დასახელება" [(ngModel)]='name'><br>
+  <button (click)='Add()' class="addButton">{{addButton}}</button>
 </div>
 <div class="container" *ngIf="todos">
-	<ul>
-		<li *ngFor="let todo of todos; let i= index">
-			<button id="edit" (click) ="Edit(todo.name, i)">შეცვლა</button>
-			<button id="delete" (click)="Delete(i)">წაშლა</button>
-			<span>{{todo.name}}</span>
-		</li>
-	</ul>
+  <div class="infobar">
+    <ul class="inline">
+      <li class="info">სტატუსი</li>
+      <li>დედლაინი</li>
+    </ul>
+  </div>
+  <ul class="buttonsUl">
+    <li class="buttons" *ngFor="let todo of todos; let i= index">
+      <button id="edit" (click) ="Edit(todo.name, i)">შეცვლა</button>
+      <button id="delete" (click)="Delete(i)">წაშლა</button>
+      <input class="chkbx" type="checkbox">
+      <input class="deadline" type="date">
+      <span>{{todo.name}}</span>
+    </li>
+  </ul>
 </div>
- 
+
